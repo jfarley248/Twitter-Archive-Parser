@@ -20,11 +20,16 @@ from slimit.visitors import nodevisitor
 import twitter
 import json
 import re
+import pathlib2 as pathlib
 
-
-
-DATABASE = "output.db"
-
+TWATTER_STR = """
+  _______            _   _            
+ |__   __|          | | | |           
+    | |_      ____ _| |_| |_ ___ _ __ 
+    | \ \ /\ / / _` | __| __/ _ \ '__|
+    | |\ V  V / (_| | |_| ||  __/ |   
+    |_| \_/\_/ \__,_|\__|\__\___|_|   
+"""
 
 def open_db(inputPath):
     try:
@@ -36,7 +41,7 @@ def open_db(inputPath):
 
 
 # Extremely simple function to check if path exists
-def validate_path(archivePath):
+def validate_archive_path(archivePath):
     if os.path.exists(archivePath):
         if os.path.isdir(archivePath):
             return 1
@@ -45,28 +50,55 @@ def validate_path(archivePath):
     else:
         return 0
 
+#def validate_output_path(ouputPath):
+
 # Returns path of Twitter archive directory to work with
 def get_argument():
+    print(TWATTER_STR)
     parser = argparse.ArgumentParser(description='Utility to parse out Twitter Archive')
 
     #  Gets path to Twitter Archive
-    parser.add_argument('-a', '--archive', type=str, nargs='+', dest='archivePath', help='Path to Twitter Archive Folder')
-    #parser.add_argument('-o', '--output', type=str, nargs='+', dest='outputPath', help='Filepath to output database')
+    parser.add_argument('-a', '--archive', required=True, type=str, nargs='+', dest='archivePath', help='Path to Twitter Archive Folder')
+    parser.add_argument('-o', '--output', required=True, type=str, nargs='+', dest='outputPath', help='Filepath to output database')
+
+    argumentsPaths = []
 
     args = parser.parse_args()
+    if args.outputPath[0]:
+
+        # Checks if database already exists
+        ouputPathEdit = pathlib.Path(args.outputPath[0])
+        exists = ouputPathEdit.is_file()
+        if exists:
+            print("ERROR: Database already exists or Not a Valid Directory\n")
+            exit()
+        else:
+
+            # Checks to see if the output file is a creatable file in an accessible folder
+            creatable = os.access(os.path.dirname(args.outputPath[0]), os.W_OK)
+            if creatable:
+                argumentsPaths.append(args.outputPath[0])
+            else:
+                print("ERROR: Not a valid path")
+                exit(0)
+
+    else:
+        print("ERROR: No output path given")
+
     if args.archivePath[0]:
-        exists = validate_path(args.archivePath[0])
+        archivePathEdit = pathlib.Path(args.archivePath[0])
+        exists = archivePathEdit.is_dir()
         if exists:
             if args.archivePath[0].endswith("\\"):
-                return args.archivePath[0]
+                argumentsPaths.append(args.archivePath[0])
+                return argumentsPaths
             else:
-                str(args.archivePath[0]) + "\\"
-                return args.archivePath[0]
+                fixedPath = str(args.archivePath[0]) + "\\"
+                return argumentsPaths.append(fixedPath)
         else:
-            print("Not a valid directory \n")
-            sys.exit()
+            print("ERROR: Not a valid directory \n")
+            exit()
     
-
 # Function that returns array of values from javascript files
 def getDict(filepath):
     dataArr = []
@@ -94,9 +126,9 @@ def account(path):
 
     # Opens databse and initializes path names
     # TODO - ADD FILE CHECKING
-    db = open_db(DATABASE)
-    accountPath = path + "\\account.js"
-    ipPath = path + "\\account-creation-ip.js"
+    db = open_db(path[0])
+    accountPath = path[1] + "\\account.js"
+    ipPath = path[1] + "\\account-creation-ip.js"
 
     # Fills arrays with data from files
     accountData = getDict(accountPath)
@@ -123,8 +155,8 @@ def getDataFromTweet(regEx, inputStr):
 def tweets(path):
     # Opens databse and initializes path names
     # TODO - ADD FILE CHECKING
-    db = open_db(DATABASE)
-    tweetPath = path + "\\tweet.js"
+    db = open_db(path[0])
+    tweetPath = path[1] + "\\tweet.js"
 
     retweetArr = []
     sourceArr = []
@@ -185,12 +217,11 @@ def tweets(path):
     db.commit()
     db.close()
 
-
 def main():
+    archivePath = []
     archivePath = get_argument()
     account(archivePath)
     tweets(archivePath)
-
 
 
 if __name__ == "__main__":
