@@ -31,6 +31,7 @@ EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
 * Parses Tweet Data from tweet.js
 
 ## Current Issues
+* Needs a lot more testing
 * Fix output database being overwritteen, tell user DB already exists (easy fix)
 * Needs better file verifications
 
