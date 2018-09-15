@@ -1,4 +1,13 @@
 # Twatter
+```
+  _______            _   _
+ |__   __|          | | | |
+    | |_      ____ _| |_| |_ ___ _ __
+    | \ \ /\ / / _` | __| __/ _ \ '__|
+    | |\ V  V / (_| | |_| ||  __/ |
+    |_| \_/\_/ \__,_|\__|\__\___|_|
+```
+
 Python Script to parse Twitter Archive
 
 
@@ -14,14 +23,18 @@ Python Script to parse Twitter Archive
 
 ## Running the Script
 ```
-usage: Twatter.py [-h] [-a ARCHIVEPATH [ARCHIVEPATH ...]]
+
+usage: Twatter.py [-h] -a ARCHIVEPATH [ARCHIVEPATH ...] -o OUTPUTPATH
+                  [OUTPUTPATH ...]
 
 Utility to parse out Twitter Archive
 
 optional arguments:
   -h, --help            show this help message and exit
   -a ARCHIVEPATH [ARCHIVEPATH ...], --archive ARCHIVEPATH [ARCHIVEPATH ...]
-                        Path to Twitter Archive
+                        Path to Twitter Archive Folder
+  -o OUTPUTPATH [OUTPUTPATH ...], --output OUTPUTPATH [OUTPUTPATH ...]
+                        Filepath to output database
 ```
 
 EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
@@ -33,8 +46,6 @@ EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
 
 ## Currently Known Issues
 * Needs a lot more testing
-* Fix output database being overwritteen, tell user DB already exists (easy fix)
-* Needs better file verifications
 
 ## Future Implementations
 * Logging
