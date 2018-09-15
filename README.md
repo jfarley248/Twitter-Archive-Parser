@@ -9,7 +9,7 @@ Python Script to parse Twitter Archive
   * `pip install lxml`
   * `pip install requests`
   * `pip install slimit`
-  * `pip install pathlib`
+  * `pip install pathlib2`
 * OR use bundled executable
 
 ## Running the Script
