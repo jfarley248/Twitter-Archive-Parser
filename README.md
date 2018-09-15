@@ -30,7 +30,7 @@ EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
 * Parses Basic Account info from account.js
 * Parses Tweet Data from tweet.js
 
-## Current Issues
+## Currently Known Issues
 * Needs a lot more testing
 * Fix output database being overwritteen, tell user DB already exists (easy fix)
 * Needs better file verifications
