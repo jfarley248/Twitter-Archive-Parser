@@ -50,7 +50,7 @@ def get_argument():
     parser = argparse.ArgumentParser(description='Utility to parse out Twitter Archive')
 
     #  Gets path to Twitter Archive
-    parser.add_argument('-a', '--archive', type=str, nargs='+', dest='archivePath', help='Path to Twitter Archive')
+    parser.add_argument('-a', '--archive', type=str, nargs='+', dest='archivePath', help='Path to Twitter Archive Folder')
     #parser.add_argument('-o', '--output', type=str, nargs='+', dest='outputPath', help='Filepath to output database')
 
     args = parser.parse_args()
