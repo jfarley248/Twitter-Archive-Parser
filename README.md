@@ -37,7 +37,7 @@ optional arguments:
                         Filepath to output database
 ```
 
-EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
+EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter\ -o C:\Users\jfarley248\Desktop\ouput.db`
 
 ## Current Functionality
 * Ouputs data to SQLite DB
