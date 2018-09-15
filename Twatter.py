@@ -50,8 +50,6 @@ def validate_archive_path(archivePath):
     else:
         return 0
 
-#def validate_output_path(ouputPath):
-
 # Returns path of Twitter archive directory to work with
 def get_argument():
     print(TWATTER_STR)
