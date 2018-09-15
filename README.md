@@ -38,9 +38,9 @@ EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
 * Logging
 * Get Twitter username from ID without using Twitter API
 * More data files to parse
- * Blocked Users
- * Liked Tweets
- * Contacts
- * Connected Apps
- * Basically every other .js file
+  * Blocked Users
+  * Liked Tweets
+  * Contacts
+  * Connected Apps
+  * Basically every other .js file
  
