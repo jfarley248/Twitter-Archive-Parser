@@ -24,3 +24,23 @@ optional arguments:
 ```
 
 EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter_Folder`
+
+## Current Functionality
+* Ouputs data to SQLite DB
+* Parses Basic Account info from account.js
+* Parses Tweet Data from tweet.js
+
+## Current Issues
+* Fix output database being overwritteen, tell user DB already exists (easy fix)
+* Needs better file verifications
+
+## Future Implementations
+* Logging
+* Get Twitter username from ID without using Twitter API
+* More data files to parse
+ * Blocked Users
+ * Liked Tweets
+ * Contacts
+ * Connected Apps
+ * Basically every other .js file
+ 
