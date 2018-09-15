@@ -8,7 +8,7 @@
     |_| \_/\_/ \__,_|\__|\__\___|_|
 ```
 
-Python Script to parse Twitter Archive
+Python Script to parse Twitter Archives
 
 *Current Version: 0.01b* 
 
