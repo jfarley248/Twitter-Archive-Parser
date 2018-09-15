@@ -10,6 +10,7 @@
 
 Python Script to parse Twitter Archive
 
+*Current Version: 0.01b* 
 
 ## Prerequisites
 * Windows Environment
