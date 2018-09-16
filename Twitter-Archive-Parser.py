@@ -1,9 +1,9 @@
 '''
    Copyright (c) 2018 Jack Farley
-   This file is part of Twatter
+   This file is part of Twitter-Archive-Parser
    Usage or distribution of this software/code is subject to the
    terms of the GNU GENERAL PUBLIC LICENSE.
-  Twatter.py
+  Twitter-Archive-Parser.py
    ------------
 '''
 from __future__ import unicode_literals
@@ -22,14 +22,7 @@ import json
 import re
 import pathlib2 as pathlib
 
-TWATTER_STR = """
-  _______            _   _            
- |__   __|          | | | |           
-    | |_      ____ _| |_| |_ ___ _ __ 
-    | \ \ /\ / / _` | __| __/ _ \ '__|
-    | |\ V  V / (_| | |_| ||  __/ |   
-    |_| \_/\_/ \__,_|\__|\__\___|_|   
-"""
+
 
 def open_db(inputPath):
     try:
@@ -52,7 +45,7 @@ def validate_archive_path(archivePath):
 
 # Returns path of Twitter archive directory to work with
 def get_argument():
-    print(TWATTER_STR)
+
     parser = argparse.ArgumentParser(description='Utility to parse out Twitter Archive')
 
     #  Gets path to Twitter Archive
