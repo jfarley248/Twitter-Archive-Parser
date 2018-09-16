@@ -1,12 +1,5 @@
-# Twatter
-```
-  _______            _   _
- |__   __|          | | | |
-    | |_      ____ _| |_| |_ ___ _ __
-    | \ \ /\ / / _` | __| __/ _ \ '__|
-    | |\ V  V / (_| | |_| ||  __/ |
-    |_| \_/\_/ \__,_|\__|\__\___|_|
-```
+# Twitter-Archive-Parser
+
 
 Python Script to parse Twitter Archives
 
@@ -26,7 +19,7 @@ Python Script to parse Twitter Archives
 ## Running the Script
 ```
 
-usage: Twatter.py [-h] -a ARCHIVEPATH [ARCHIVEPATH ...] -o OUTPUTPATH
+usage: Twitter-Archive-Parserr.py [-h] -a ARCHIVEPATH [ARCHIVEPATH ...] -o OUTPUTPATH
                   [OUTPUTPATH ...]
 
 Utility to parse out Twitter Archive
@@ -39,7 +32,7 @@ optional arguments:
                         Filepath to output database
 ```
 
-EXAMPLE: `python .\Twatter.py -a C:\Users\jfarley248\Desktop\Twitter\ -o C:\Users\jfarley248\Desktop\ouput.db`
+EXAMPLE: `python .\Twitter-Archive-Parser.py -a C:\Users\jfarley248\Desktop\Twitter\ -o C:\Users\jfarley248\Desktop\ouput.db`
 
 ## Current Functionality
 * Ouputs data to SQLite DB
