@@ -20,6 +20,7 @@ Python Script to parse Twitter Archives
   * `pip install requests`
   * `pip install slimit`
   * `pip install pathlib2`
+  * `pip install BeautifulSoup`
 * OR use bundled executable
 
 ## Running the Script
