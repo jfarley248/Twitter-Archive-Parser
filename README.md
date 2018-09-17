@@ -3,7 +3,7 @@
 
 Python Script to parse Twitter Archives
 
-*Current Version: 0.01b* 
+*Current Version: 1.0* 
 
 ## Prerequisites
 * Windows Environment
@@ -13,7 +13,6 @@ Python Script to parse Twitter Archives
   * `pip install requests`
   * `pip install slimit`
   * `pip install pathlib2`
-  * `pip install BeautifulSoup`
 * OR use bundled executable
 
 ## Running the Script
@@ -36,19 +35,22 @@ EXAMPLE: `python .\Twitter-Archive-Parser.py -a C:\Users\jfarley248\Desktop\Twit
 
 ## Current Functionality
 * Ouputs data to SQLite DB
-* Parses Basic Account info from account.js
-* Parses Tweet Data from tweet.js
+* Parses Data From
+  * account.js
+  * tweet.js
+  * ip-audit.js
+  * block.js
+  * direct-message.js
+  * contact.js
+  * follower.js
+  * following.js
+  * connected-application.js
 
 ## Currently Known Issues
 * Needs a lot more testing
 
 ## Future Implementations
 * Logging
-* Get Twitter username from ID without using Twitter API
-* More data files to parse
-  * Blocked Users
-  * Liked Tweets
-  * Contacts
-  * Connected Apps
-  * Basically every other .js file
+* Find optimal sub-routine calling process
+* Ad Data Parsing
  
